@@ -35,8 +35,8 @@ def feature_engineering(X:pd.DataFrame):
     
     y = X['label'].map(labels_to_ids).values
 
-    save_dict(labels_to_ids, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/app/models/labelstoid.npy")
-    save_dict(ids_to_labels, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/app/models/idstolabel.npy")
+    save_dict(labels_to_ids, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/models/labelstoid.npy")
+    save_dict(ids_to_labels, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/models/idstolabel.npy")
 
     stops = stopwords.words('english')
     stemmer = PorterStemmer()
@@ -65,7 +65,7 @@ def feature_transforming(X:pd.DataFrame):
     print("fitting tfidf")
     transformed_text = text_transformer.fit_transform(X_tr.tolist())
 
-    save_model(text_transformer, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/app/models/tf_iX.pkl")
+    save_model(text_transformer, "/Users/davidhajdu/Desktop/Projects/amazon pet classification/models/tf_iX.pkl")
     
     return transformed_text, y
 

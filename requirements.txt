@@ -3,3 +3,5 @@ fastapi
 sklearn
 pandas
 numpy
+joblib
+nltk

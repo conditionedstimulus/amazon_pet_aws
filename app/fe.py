@@ -12,10 +12,10 @@ import os
 
 class FeatureEngineering:
 
-    def __init__(self):
+    def __init__(self, path):
         self.stemmer = PorterStemmer()
         self.stops = stopwords.words('english')
-        self.pth = Path(os.getcwd())
+        self.pth = Path(path)
 
 
     def cleaning(self, X:str):
@@ -34,9 +34,7 @@ class FeatureEngineering:
 
         X_tr = self.cleaning(X)
 
-        print(X_tr)
-
-        text_transformer = joblib.load(self.pth / "app/models/tf_iX.pkl")
+        text_transformer = joblib.load(self.pth / "models/tf_iX.pkl")
 
         transformed_text = text_transformer.transform([X_tr])
 
