@@ -26,6 +26,9 @@ clf = joblib.load(pth / "app/models/lr.pkl")
 idtolabel = np.load(pth / "app/models/idstolabel.npy", allow_pickle=True)
 idtolabel = idtolabel.item()
 
+@app.get("/")
+def root():
+    return {"root":"The app works well..."}
 
 
 @app.post("/inference/")
