@@ -44,5 +44,5 @@ jobs:
         application_name: Pet review classifier (amazon)
         environment_name: Petreviewclassifieramazon-env
         version_label: "pet review classifier (amazon)-${{ steps.format-time.outputs.replaced }}"
-        region: eu-west-2b
+        region: eu-west-2
         deployment_package: deploy.zip
