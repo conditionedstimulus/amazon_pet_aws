@@ -21,7 +21,7 @@ jobs:
       run: docker build -t amazon_pet -f Dockerfile .
     -
       name: Generate Deployment Package
-      run: zip -r deploy.zip *
+      run: zip -r deploy.zip requirements.txt Dockerfile app/
     -
       name: Get timestamp
       uses: gerred/actions/current-time@master
